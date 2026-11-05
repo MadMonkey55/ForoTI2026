@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2026 a las 02:50:24
+-- Tiempo de generación: 05-11-2026 a las 04:16:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -37,6 +37,7 @@ CREATE TABLE `asistentes_foro` (
   `carrera_id` bigint(20) UNSIGNED NOT NULL,
   `cuatrimestre` varchar(20) NOT NULL,
   `taller_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Indica si el alumno ya pagó y puede inscribirse en un taller',
   `correo` varchar(100) NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -180,7 +181,8 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
-(3, '0001_01_01_000002_create_jobs_table', 1);
+(3, '0001_01_01_000002_create_jobs_table', 1),
+(4, '2026_11_04_000001_add_habilitado_to_asistentes_foro', 2);
 
 -- --------------------------------------------------------
 
@@ -437,7 +439,7 @@ ALTER TABLE `videojuegos`
 -- AUTO_INCREMENT de la tabla `asistentes_foro`
 --
 ALTER TABLE `asistentes_foro`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `carreras`
@@ -467,7 +469,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `participantes_torneo`
