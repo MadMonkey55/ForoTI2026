@@ -216,31 +216,36 @@ function Inicio() {
       }}
     >
       {/* Encabezado */}
-      <header className="mx-auto flex max-w-4xl items-center justify-between gap-3 py-4">
-        <a href="#inicio" className="shrink-0">
-          <Img
-            src="/logo-foroti.png"
-            alt="Logo Foro TI 2026"
-            fallbackClass="text-2xl font-black text-cyan-300"
-            className="h-20 w-auto object-contain sm:h-28"
-          />
-        </a>
+<header className="mx-auto flex w-full max-w-4xl items-center justify-between gap-3 px-3 py-4 sm:px-6">
+  
+  <a href="#inicio" className="w-[35%] shrink-0 sm:w-auto">
+    <Img
+      src="/logo-foroti.png"
+      alt="Logo Foro TI 2026"
+      fallback="FORO TI 2026"
+      fallbackClass="text-2xl font-black text-cyan-300"
+      className="h-12 w-full object-contain object-left sm:h-28 sm:w-auto"
+    />
+  </a>
 
-        <div className="flex items-center gap-3 sm:gap-6">
-          <Img
-            src="/logo-ia.png"
-            alt="Instituto de Investigación en Inteligencia Artificial"
-            fallbackClass="text-sm font-bold text-slate-300"
-            className="h-10 w-auto object-contain sm:h-14"
-          />
-          <Img
-            src="/logo-segundo.png"
-            alt="Ingeniería en Tecnologías de la Información e Innovación Digital"
-            fallbackClass="text-sm font-bold text-slate-300"
-            className="h-10 w-auto object-contain sm:h-14"
-          />
-        </div>
-      </header>
+  <div className="flex w-[60%] flex-row items-center justify-end gap-1 sm:w-auto sm:gap-6">
+    {/* CAMBIO SOLO PARA PC: Subimos de sm:h-14 a sm:h-20 */}
+    <Img
+      src="/logo-ia.png"
+      alt="Instituto de Investigación en Inteligencia Artificial"
+      fallback="IIA"
+      fallbackClass="text-sm font-bold text-slate-300"
+      className="h-8 w-auto object-contain sm:h-20"
+    />
+    <Img
+      src="/logo-segundo.png"
+      alt="Ingeniería en Tecnologías de la Información e Innovación Digital"
+      fallback="ITIID"
+      fallbackClass="text-sm font-bold text-slate-300"
+      className="h-8 w-auto object-contain sm:h-20"
+    />
+  </div>
+</header>
 
       {/* Banner principal */}
       <section
